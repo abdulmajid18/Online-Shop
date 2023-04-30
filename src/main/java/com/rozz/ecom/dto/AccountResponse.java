@@ -18,5 +18,4 @@ public class AccountResponse {
     private String lastName;
     private String phone;
     private String email;
-    private String password;
 }
