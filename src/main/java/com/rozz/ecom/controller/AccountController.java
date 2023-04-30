@@ -25,7 +25,7 @@ public class AccountController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<AccountResponse> getAllAccounts() {
-        accountService.getAllAccounts();
+       return  accountService.getAllAccounts();
     }
 
 }
