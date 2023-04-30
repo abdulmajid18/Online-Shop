@@ -49,6 +49,7 @@ public class Account {
 
     @OneToOne(mappedBy = "seller")
     private Product product;
+    
 
 
 
