@@ -22,4 +22,8 @@ public class AccountRequest {
     private String phone;
     private String email;
     private String password;
+
+    public AddressStatus getDefaultStatus() {
+        return AddressStatus.UNKNOWN;
+    }
 }
