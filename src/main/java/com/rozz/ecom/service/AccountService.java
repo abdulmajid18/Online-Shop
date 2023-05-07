@@ -41,6 +41,7 @@ public class AccountService {
                 .firstname(account.getFirsName())
                 .lastname(account.getLastName())
                 .phone(account.getPhone())
+                .status(account.getStatus())
                 .email(account.getEmail()).build();
     }
 }
