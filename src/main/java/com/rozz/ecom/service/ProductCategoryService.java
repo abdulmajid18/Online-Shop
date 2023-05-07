@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class ProductCategoryService {
-    private ProductCategoryRepository productCategoryRepository;
+    private  final ProductCategoryRepository productCategoryRepository;
 
     public void createCategory(ProductCategoryRequest productCategoryRequest) {
         ProductCategory productCategory = ProductCategory.builder()
@@ -27,7 +27,7 @@ public class ProductCategoryService {
         log.info("Product {} with description {} saved!", productCategory.getName(),productCategory.getDescription());
     }
 
-    public List<ProductCategoryResponse> getAllAccounts() {
+    public List<ProductCategoryResponse> getAllCategories() {
         List<ProductCategory> productCategories = (List<ProductCategory>) productCategoryRepository.findAll();
         return productCategories.stream().map(this::mapToProductCategoryResponse).toList();
     }
