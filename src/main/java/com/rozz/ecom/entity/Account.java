@@ -41,7 +41,7 @@ public class Account {
     private String password;
 
     @Column(name = "status")
-    private AddressStatus status;
+    private AccountStatus status;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
@@ -49,7 +49,7 @@ public class Account {
 
     @OneToOne(mappedBy = "seller")
     private Product product;
-    
+
 
 
 
