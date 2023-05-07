@@ -1,5 +1,7 @@
 package com.rozz.ecom.dto;
 
+import com.rozz.ecom.entity.AccountStatus;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,9 +15,10 @@ import java.util.UUID;
 @NoArgsConstructor
 public class AccountResponse {
     private UUID id;
-    private String userName;
-    private String firsName;
-    private String lastName;
+    private String username;
+    private String firstname;
+    private String lastname;
     private String phone;
     private String email;
+    private AccountStatus status;
 }
