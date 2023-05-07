@@ -3,7 +3,6 @@ package com.rozz.ecom.service;
 import com.rozz.ecom.dto.AccountRequest;
 import com.rozz.ecom.dto.AccountResponse;
 import com.rozz.ecom.entity.Account;
-import com.rozz.ecom.entity.AddressStatus;
 import com.rozz.ecom.reposiory.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,9 +18,9 @@ public class AccountService {
     private final AccountRepository accountRepository;
     public void createAccount(AccountRequest accountRequest) {
         Account account = Account.builder()
-                .userName(accountRequest.getUserName())
-                .firsName(accountRequest.getFirsName())
-                .lastName(accountRequest.getLastName())
+                .userName(accountRequest.getUsername())
+                .firsName(accountRequest.getFirstname())
+                .lastName(accountRequest.getLastname())
                 .email(accountRequest.getEmail())
                 .phone(accountRequest.getPhone())
                 .password(accountRequest.getPassword())
@@ -37,9 +36,10 @@ public class AccountService {
 
     private AccountResponse mapToAccountResponse(Account account) {
         return AccountResponse.builder()
-                .userName(account.getUserName())
-                .firsName(account.getFirsName())
-                .lastName(account.getLastName())
+                .id(account.getId())
+                .username(account.getUserName())
+                .firstname(account.getFirsName())
+                .lastname(account.getLastName())
                 .phone(account.getPhone())
                 .email(account.getEmail()).build();
     }
